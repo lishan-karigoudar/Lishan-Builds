@@ -32,6 +32,11 @@ I keep every failed prototype.
 I write down what broke and why.  
 I solder my own boards.
 
+## Media Archive
+
+All photos, videos, CAD files, and circuit diagrams are stored here:  
+📁 [Google Drive — Lishan Builds](https://drive.google.com/drive/folders/1ro1ckRLS-Fb5yqWlWCoYfg-Xk53-GNBD?usp=sharing)
+
 ## Build Log
 
 The full build log is in [BUILDLOG.md](./BUILDLOG.md) —
