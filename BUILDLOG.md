@@ -42,6 +42,20 @@ Accuracy: 100% — PERFECT!!
 **Notes:**  
 IT WORKS!!!
 
+**Photos:**  
+- Wristband on court → https://drive.google.com/file/d/1e8mn4nAJdPZ4sxEAMSW4wMVbZDKqAn3A/view?usp=sharing
+- Bluetooth connect → [Drive: v1-photos/bluetooth-connection](https://drive.google.com/file/d/1pYC77bbWyEmGQlvaE6QC_viGRAoTKQMf/view?usp=sharing)
+
+---
+ 
+**Test results:**  
+Smashes done: 10  
+Micro:bit counted: 10  
+Accuracy: 100% — PERFECT!!
+
+**Notes:**  
+IT WORKS!!!
+
 ---
 
 ## Entry 001 — June 2025
