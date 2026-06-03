@@ -4,6 +4,33 @@ Newest entry on top. One entry per build session.
 Every version. Every failure. Every fix.
 
 ------
+## Entry 008 — 6 May 2026 (Session 2)
+**Project:** Smash Counter — micro:bit v1  
+**Versions:** v0.19 → v0.20  
+**What I worked on:**  
+Took the trained ML model and built the first working ML smash counter.
+Then Lishan asked a key question on his own:
+"Why do we need to connect to the computer to get data?
+Can we add memory so it stores by itself?"
+
+**The insight:**  
+micro:bit V2 has a built-in Data Logger.
+Stores every smash with timestamp directly to internal flash memory.
+No Bluetooth needed during court session.
+After session: plug USB, open MY_DATA.HTM, see all data.
+Download as CSV for analysis.
+
+**This is exactly how professional sports data loggers work.**  
+Record during session. Analyse after.
+
+**Versions built:**  
+- v0.19 — First ML smash counter using trained model  
+- v0.20 — ML + Data Logger, timestamps every smash  
+
+**Photos:**  
+- ML + DataLogger in MakeCode → Drive: v1-photos/ml-datalogger-makecode-6may2026.png
+
+---
 
 ## Entry 007 — 6 May 2026
 **Project:** Smash Counter — micro:bit v1  
