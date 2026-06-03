@@ -5,6 +5,81 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 020 — 21-26 May 2026
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+Trip 21-25 May. No coding.  
+Returned 26 May. Code still working perfectly.  
+Full Demo Day feature set defined with Papa.
+
+**JST connector sorted — 21 May:**  
+Battery has bare wires — needs JST 1.25mm 2 pin connector.  
+Found on Sharvi Electronics, Bangalore — ₹12 each.  
+No soldering needed on board side — just connector on battery.  
+Battery has 3 wires (red/black/white) — use only red and black.  
+
+**Back from Davangere — 26 May:**  
+Opened app.arduino.cc — code still there.  
+Plugged ESP32 — uploaded — 5 smashes counted cleanly. ✅  
+Everything working after 5 days away.  
+
+**Full Demo Day feature set agreed — 26 May:**  
+
+On device LCD:  
+- Splash screen ✅ done  
+- Live smash count ✅ done  
+- Power bar B/G/O/R ✅ done  
+- Persistent best score ✅ done  
+- Battery level indicator 🔲 pending  
+- Session timer MM:SS 🔲 pending  
+- Smashes per minute 🔲 pending  
+- Haptic buzz on smash 🔲 pending  
+- Reset button ✅ done  
+
+BLE + Phone App:  
+- BLE broadcast per smash 🔲 pending  
+- Live smash count on phone 🔲 pending  
+- Live intensity on phone 🔲 pending  
+- Session history 🔲 pending  
+- MIT App Inventor app — Lishan builds it 🔲 pending  
+
+**BLE data model agreed:**  
+Each smash broadcasts:  
+session_id, timestamp_ms, smash_number, peak_g,  
+intensity, smashes_per_min, session_best, battery_pct  
+
+**Hardware still needed:**  
+- JST 1.25mm connector — ₹12 — Sharvi Electronics  
+- NATO strap — ₹200-300 — Amazon  
+- 3D printed case — ₹100-200 — local shop  
+- Vibration motor 3V — ₹30-50 — robu.in  
+- Small MOSFET — ₹10 — robu.in  
+Total: approximately ₹400-600  
+
+**Build sequence to Demo Day:**  
+1. ✅ Smash counter + LCD + power bar + best score  
+2. 🔲 Battery level indicator  
+3. 🔲 Session timer  
+4. 🔲 Smashes per minute  
+5. 🔲 BLE broadcast  
+6. 🔲 Haptic motor  
+7. 🔲 MIT App Inventor phone app  
+8. 🔲 Integration testing  
+9. 🔲 Court demo with 4-5 players — tune threshold  
+10. 🔲 Final polish — Demo Day March 2027  
+
+**Non-negotiable gate:**  
+Court demo with real players after step 7.  
+Their feedback shapes final UI and threshold.  
+No Demo Day without real court validation.  
+
+**Roadmap document:**  
+Full product bible saved to Drive:  
+smash-counter-demo-day-roadmap-26may2026.docx  
+Not on GitHub — planning document stays in Drive.  
+
+---
+
 ## Entry 019 — 21 May 2026 (Session 2)
 **Project:** Smash Counter — ESP32 v2  
 **What happened:**  
