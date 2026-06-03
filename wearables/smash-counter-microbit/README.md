@@ -1,8 +1,10 @@
 # Smash Counter — micro:bit v1
 
-**Status:** Active — ML gesture detection working  
+**Status:** ✅ Complete — 22 versions, micro:bit chapter closed 10 May 2026
 **Hardware:** BBC micro:bit V2, CR2025 battery, custom wristband mount  
-**Started:** 12 April 2026
+**Started:** 12 April 2026  
+**Completed:** 10 May 2026  
+**Next:** ESP32 version → see smash-counter-esp32
 
 ## What it does
 Detects badminton smash shots using ML gesture recognition.
@@ -66,3 +68,15 @@ Still accuracy: 99%
 
 ## Media
 Photos, videos, and CAD files → [Google Drive](https://drive.google.com/drive/folders/1QbrVaggSvclCn4dF7djXamwQNvUSNRC0?usp=sharing)
+
+## What we learned
+- Shake gesture too sensitive — moved to acceleration threshold
+- Acceleration threshold hit hardware ceiling at court level
+- ML gesture recognition solved detection — 100% accuracy
+- Data Logger removed need for live Bluetooth connection
+- Player feedback: technology works, product needs work
+- micro:bit is a prototype tool, not a final product
+- 22 versions in 29 days — from idea to validated prototype
+
+## The quote
+*"I feel like I got a job"* — Lishan, 10 May 2026
