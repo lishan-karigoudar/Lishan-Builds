@@ -6,6 +6,72 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 014 — 14-18 May 2026
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+Four days of hard work — on the wrong path.
+Documented honestly because this is part of the journey.
+
+**The mistake — Claude's error:**  
+On 14 May, Claude gave MPU-6050 code without first confirming  
+that the Waveshare board has QMI8658 IMU built in.  
+Lishan spent 4 days on MPU-6050 libraries and setup.  
+None of it was needed. The right sensor is already on the board.  
+This is recorded so it never happens again.
+
+**What Lishan did anyway — 14 May:**  
+Installed Arduino IDE 2.3.8.  
+Added ESP32 board support via board manager URL.  
+Installed libraries: Adafruit MPU6050, Electronic Cats MPU6050.  
+Wrote first ESP32 smash counter code — MPU-6050 version.  
+Hit compile error — old code still in editor, pasted below it.  
+Fixed by clearing editor and repasting.  
+Hit second error — Mac needs Xcode developer tools.  
+Xcode requires 20.85GB — only 12.38GB available on Mac.  
+Cannot install. Switched to Arduino Web Editor instead.  
+
+**Arduino Web Editor setup — 15 May:**  
+Went to app.arduino.cc.  
+Logged in with Papa's Arduino account.  
+Verification email found in spam — verified successfully.  
+Pasted MPU-6050 smash counter code into web editor.  
+Left to go to badminton class.  
+
+**Board arrived — 18 May:**  
+ESP32-S3 board arrived with rainbow wires and 2 batteries.  
+MPU-6050 still not arrived.  
+Arduino Cloud Agent installed — Mac security blocked it.  
+Fixed via System Preferences → Security & Privacy → Open Anyway.  
+Agent installed successfully — Arduino icon visible in menu bar.  
+
+**First successful upload — 18 May:**  
+Connected ESP32 via USB-C.  
+Board displayed: onboard parameters, flash size 16MB, battery voltage.  
+Selected XIAO_ESP32S3 in web editor.  
+Code uploaded successfully after several connection attempts.  
+Serial monitor showed weird characters — baud rate was 9600.  
+Needs to be changed to 115200 to fix.  
+
+**What Lishan learned despite wrong path:**  
+- Arduino IDE installation and board manager  
+- Library installation via Library Manager  
+- Arduino Web Editor as alternative to desktop IDE  
+- Arduino Cloud Agent installation on Mac  
+- Mac security settings for unsigned apps  
+- USB-C code upload to ESP32  
+- Serial Monitor and baud rate concept  
+- Patience — 4 days of setup before one line of code ran  
+
+**Code archived:**  
+v0.2-mpu6050-wrong-path.ino — kept as record, not for use.  
+
+**Next step:**  
+Fix baud rate to 115200.  
+Switch to QMI8658 library — the correct sensor for our board.  
+Write hello world using built-in IMU.  
+
+---
+
 ## Entry 013 — 14 May 2026
 **Project:** Smash Counter — ESP32 v2  
 **What happened:**  
