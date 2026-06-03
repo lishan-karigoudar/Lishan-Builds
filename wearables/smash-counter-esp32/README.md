@@ -1,8 +1,10 @@
 # Smash Counter — ESP32 v2
 
-**Status:** 🔄 In progress — hardware ordered  
+**Status:** 🔄 Active — v0.21 working wirelessly on battery
 **Hardware:** Waveshare ESP32-S3-Touch-LCD-1.28  
 **Started:** 11 May 2026  
+**Last updated:** 2 June 2026  
+**Next session:** Weekend — school started
 **Target:** Demo Day — March 2027
 
 ## Why we moved from micro:bit
@@ -61,3 +63,37 @@ can track 30 kids at once."
 
 ## Confirmed demo venue
 Alwin — restaurant owner — has offered a kiosk spac
+
+## Versions
+
+### Wrong paths — archived for learning
+| Version | Date | Status | Notes |
+|---------|------|--------|-------|
+| v0.1 | 14 May | ✅ | Arduino IDE setup |
+| v0.2 | 14-18 May | ⚠️ Wrong path | MPU-6050 wrong sensor |
+| v0.3 | 18 May | ⚠️ Wrong path | QMI8658 first attempt — baud issues |
+| v0.4 | 18-20 May | ⚠️ Wrong path | LSM6DS3 wrong chip |
+| v0.5 | 20 May | ✅ | QMI8658 correct pins confirmed |
+
+### Working versions
+| Version | Date | Status | Notes |
+|---------|------|--------|-------|
+| v0.6 | 21 May | ✅ | First working smash detection |
+| v0.7 | 21 May | ✅ | Threshold tuned to 10g |
+| v0.8 | 21 May | ⚠️ | Display first attempt wrong pins |
+| v0.9 | 21 May | ✅ | Display correct pins |
+| v0.10 | 21 May | ✅ | Display + reset button |
+| v0.11 | 21 May | ✅ | Splash screen + best score |
+| v0.12 | 21 May | ✅ | yield() crash fix |
+| v0.13 | 21 May | ✅ | Persistent best score — Lishan's idea |
+| v0.14 | 21 May | ✅ | Power bar B/G/O/R — Lishan's idea |
+| v0.15 | 27 May | ✅ | Session timer HH:MM:SS |
+| v0.16 | 27 May | ✅ | Smashes per minute |
+| v0.17 | 27 May | ⚠️ | BLE blocked by library conflict |
+| v0.18 | 27 May | ✅ | WiFi dashboard — pivot from BLE |
+| v0.19 | 27 May | ✅ | Dual core — WiFi stable |
+| v0.20 | 2 Jun | ✅ | Deep sleep long press |
+| v0.21 | 2 Jun | ✅ Active | Timer based display — fully stable |
+
+## Media
+Photos, videos, and CAD files → [Google Drive](LINK_TO_BE_ADDED)
