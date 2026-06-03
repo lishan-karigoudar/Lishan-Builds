@@ -5,6 +5,51 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 022 — 27 May 2026
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+Hardware ordered. GPIO pins verified from schematic.
+Session timer added and working.
+
+**Critical schematic correction:**  
+GPIO4 and GPIO5 listed in roadmap as free — WRONG.  
+Actual schematic confirmed:  
+GPIO4 = IMU_INT1 — occupied ⚠️  
+GPIO5 = TP_INT touch interrupt — occupied ⚠️  
+Correct free GPIOs: 15, 16, 17, 18, 21, 33  
+Vibration motor will use GPIO15 — confirmed free.  
+Roadmap updated accordingly.  
+
+**Hardware ordered — robu.in:**  
+Vibration motor 3V 4×8mm × 2 — ₹134  
+BC547 NPN transistor × 6 — ₹11.94  
+JST 1.25mm 2-pin connector × 2 — ₹24  
+1K ohm resistor through-hole × 10 — ₹22.60  
+Flat shipping — ₹50  
+Total — approximately ₹242  
+
+**v0.15 — Session timer working:**  
+Timer shows HH:MM:SS counting up from session start.  
+Updates every 1 second — not every loop iteration.  
+Resets when BOOT button pressed.  
+No extra library — uses millis() built into Arduino.  
+Lishan asked about hours — upgraded from MM:SS to HH:MM:SS.  
+
+**Screen layout now complete:**  
+Top: SMASH COUNTER title  
+Centre: large cyan smash count  
+Below number: BEST: XX in red  
+Bottom: HH:MM:SS timer in cyan  
+Right side: power bar B/G/O/R  
+
+**Next:**  
+Add smashes per minute.  
+Components arrive — connect battery wirelessly.  
+Add battery level indicator.  
+Start BLE broadcast.  
+
+---
+
 ## Entry 021 — 27 May 2026
 **Project:** Smash Counter — ESP32 v2  
 **What happened:**  
