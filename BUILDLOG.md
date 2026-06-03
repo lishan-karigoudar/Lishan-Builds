@@ -5,6 +5,53 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 021 — 27 May 2026
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+Hardware planning and order finalised for remaining components.
+
+**Components ordered from robu.in:**  
+Vibration motor 3V 4×8mm × 2 — ₹67 each — one spare  
+BC547 NPN transistor × 6 — ₹1.99 each — spares for future  
+JST A1250-02Y 1.25mm 2-pin female connector × 2 — ₹12 each  
+1K ohm resistor through-hole × 10 — ₹2.26 each  
+Flat shipping — ₹50  
+Total — approximately ₹220  
+
+**Why each component:**  
+Vibration motor — haptic feedback on each smash  
+BC547 — transistor to switch motor from GPIO pin safely  
+JST connector — battery connection to board BAT socket  
+1K resistor — protects GPIO pin from BC547 base current  
+
+**GPIO pins verified from schematic:**  
+Schematic reviewed before ordering — no assumptions.  
+Free GPIO pins on SH1.0 connector:  
+GPIO1 — ADC for battery voltage reading  
+GPIO3 — free — available for motor  
+GPIO4 — free — available for motor  
+GPIO5 — free — available for motor  
+GPIO6 — SDA I2C — already used by QMI8658  
+GPIO7 — SCL I2C — already used by QMI8658  
+Motor will use GPIO3 — confirmed free.  
+
+**Soldering decision:**  
+Soldering kit not ordered yet.  
+Only 2 joints needed now — battery wires to JST connector.  
+Papa will supervise first-time soldering.  
+Full kit to be bought when Arduino Nano v2 phase begins.  
+
+**Schematic saved:**  
+Drive: v1-hardware/ESP32-S3-Touch-LCD-1.28-schematic.png  
+
+**Next:**  
+Components arrive — connect battery wirelessly.  
+Add battery level indicator to display.  
+Add session timer.  
+Add smashes per minute.  
+
+---
+
 ## Entry 020 — 21-26 May 2026
 **Project:** Smash Counter — ESP32 v2  
 **What happened:**  
