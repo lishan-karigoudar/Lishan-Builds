@@ -4,6 +4,59 @@ Newest entry on top. One entry per build session.
 Every version. Every failure. Every fix.
 
 ------
+
+## Entry 009 — May 2026
+**Project:** Smash Counter — micro:bit v1  
+**Version:** v0.21  
+**What I worked on:**  
+Improved ML model from 7 to 20 samples per action.
+Much stronger recognition — more data = better model.
+Ran first real data session — 68 smashes logged with timestamps.
+Showed the device to real people for the first time.
+
+**ML model:**  
+Platform: createai.microbit.org  
+Smash samples: 20  
+Still samples: 20  
+
+**Data session:**  
+68 smashes logged via Data Logger.
+Retrieved via MY_DATA.HTM after session.
+
+**Player and adult feedback — 15-18 kids, 6-7 adults:**  
+- Display not readable on court — LED matrix too small
+- Bluetooth connection dropping during play
+- Not durable enough for court use
+- Wearable mount uncomfortable
+- One kid: "it looks huge"
+- Adults: "work on the wearable form factor"
+- One adult: won't buy, already spent money on son's LEGO
+- One adult laughed and walked away without engaging
+
+**What this means:**  
+The technology works. The product needs work.
+micro:bit is a prototype tool, not a final product.
+Every piece of feedback points to the same solution — ESP32.
+Onboard LCD display solves readability.
+Better form factor solves size and wearable issues.
+No Bluetooth needed solves connection drops.
+
+**Key milestone:**  
+Alwin — restaurant owner — gave his number.
+Offered kiosk demo space in his restaurant
+when ESP32 version is ready.
+First external demo venue confirmed.
+
+**Next step:**  
+Move to ESP32-S3-Touch-LCD-1.28.
+Solve display, durability, size, wearable in one step.
+
+**Photos:**  
+- 20 sample ML training → Drive: v1-photos/ml-20samples-training.png
+- v0.21 code → Drive: v1-photos/ml-v0.21-code-with-still-event.png
+
+---
+
 ## Entry 008 — 6 May 2026 (Session 2)
 **Project:** Smash Counter — micro:bit v1  
 **Versions:** v0.19 → v0.20  
