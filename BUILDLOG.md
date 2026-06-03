@@ -6,6 +6,63 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 016 — 18-20 May 2026
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+Three days of debugging. Multiple wrong paths. Finally found root cause.
+Documented fully and honestly.
+
+**18 May — wrong sensor library:**  
+After baud rate issues with v0.3, switched to LSM6DS3 library.  
+LSM6DS3 is completely wrong chip — not on our board at all.  
+Multiple library versions tried — none worked.  
+LED debugging attempted — pins 21, 48, all 50 pins, NeoPixel.  
+Nothing blinked. LED is WS2812 RGB — needs different approach.  
+Session ended with no working output.  
+
+**20 May — root cause found:**  
+Baud rate finally fixed at 115200.  
+ESP32 crashing with Guru Meditation Error.  
+Board identification breakthrough — Lishan read the label:  
+"esp32-s3-touch-LCD-1.28"  
+Not XIAO ESP32S3 as assumed in IDE all along.  
+
+**Six mistakes found and fixed:**  
+1. Wrong board selected — XIAO_ESP32S3 → ESP32S3 Dev Module  
+2. Wire.begin() missing pins → Wire.begin(6, 7) — SDA GPIO6, SCL GPIO7  
+3. Wrong sensor address — 0x6A → 0x6B  
+4. USB CDC on Boot disabled → must be Enabled  
+5. Wrong ESP32 board version → needs exactly 2.0.12  
+6. Wrong sensor chip entirely — LSM6DS3 vs QMI8658  
+
+**How we found the right settings:**  
+Santy shared full Waveshare wiki specs.  
+Official manual confirmed all pin numbers and settings.  
+No more guessing — everything from official documentation.  
+
+**Official Waveshare demo downloaded:**  
+Contains exact QMI8658 library files.  
+Working Arduino code that reads the sensor.  
+This is the definitive reference going forward.  
+
+**Code archived:**  
+v0.4-lsm6ds3-wrong-chip.ino — wrong path, kept for record  
+v0.5-qmi8658-correct-pins.ino — first correct settings  
+
+**What Lishan learned:**  
+Read the label on the physical board before selecting it in IDE.  
+Read the official manual before writing any code.  
+Wire.begin() on ESP32 needs explicit pin numbers — not like Arduino Uno.  
+USB CDC must be enabled for Serial.println to work on this board.  
+
+**Next step:**  
+Upload v0.5 with correct settings.  
+Verify "Sensor ID: 05" appears in Serial Monitor.  
+Confirm AccX AccY AccZ values printing.  
+Then build smash detection on top.  
+
+---
+
 ## Entry 015 — 18 May 2026 (Session 2)
 **Project:** Smash Counter — ESP32 v2  
 **What happened:**  
