@@ -6,6 +6,48 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 013 — 14 May 2026
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+First day on ESP32. Arduino IDE installed and configured.
+Components not arrived yet — but software side ready.
+
+**Arduino IDE setup:**  
+Downloaded Arduino IDE 2.3.8.  
+Added ESP32 board support via board manager:  
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json  
+Libraries installed: Servo@1.3.0, Stepper@1.1.3  
+
+**Important clarification — no MPU-6050 needed:**  
+Earlier plan used XIAO ESP32C3 — no built-in IMU — needed external MPU-6050.  
+Final board is Waveshare ESP32-S3-Touch-LCD-1.28 — QMI8658 IMU built in.  
+MPU-6050 order cancelled. Saving ₹150. Simplifies wiring completely.  
+
+**Hardware path clarified:**  
+ESP32-C3 — wrong path, abandoned early ✅  
+ESP32-S3 — correct — this is what's in the Waveshare board ✅  
+
+**Confirmation chain:**  
+Waveshare wiki confirms QMI8658 IMU built in ✅  
+Hubtronics.in has it in stock at ₹2,049 ✅  
+STL case file confirmed fits the board ✅  
+Edge Impulse supports ESP32-S3 ✅  
+Arduino IDE supports ESP32-S3 ✅  
+
+**Status:**  
+Arduino IDE ready. Board not arrived yet — shows "No board selected".  
+Hello world sketch prepared and waiting.  
+Components arriving in 1-2 days.  
+
+**Next session:**  
+Board arrives → connect USB-C → select ESP32-S3 board in IDE  
+→ upload hello world → confirm board is alive.  
+
+**Photos:**  
+- Arduino IDE installed → Drive: v1-hardware/arduino-ide-installed-14may2026.png  
+
+---
+
 ## Entry 012 — 11-13 May 2026
 **Project:** Smash Counter — ESP32 v2  
 **What happened:**  
