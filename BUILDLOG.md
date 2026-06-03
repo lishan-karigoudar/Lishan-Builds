@@ -6,6 +6,72 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 018 — 21 May 2026
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+The biggest single day of the project.
+Sensor working → display working → reset button working.
+All in one day.
+
+**Threshold calibration:**  
+Started at 2.5g — triggered by any movement.  
+Tested: 4.0g → 6.0g → 10.0g  
+10.0g feels right for hard smash motion without USB cable.  
+Lishan's note: try 11.0g or 12.0g on real court with racket.  
+
+**Display — first attempt — v0.8:**  
+Installed Adafruit GC9A01A and Adafruit GFX libraries.  
+Wrong SPI pins used — board crashed immediately.  
+
+**Display — correct pins found — v0.9:**  
+Correct pins from real user who got it working:  
+DC=8, CS=9, MOSI=11, SCLK=10, RST=14, BL=2  
+Display initialised — "SMASH COUNTER 0 smashes" on screen.  
+First text on round LCD. 🎉  
+Problem: board crashed after first smash.  
+fillScreen() too heavy — called on every smash.  
+
+**Display crash fix — v0.10:**  
+Split drawScreen() into two functions:  
+drawInitialScreen() — full screen draw once at startup only.  
+drawNumber() — only redraws number area using fillRect().  
+This fixed crash completely.  
+
+**Reset button added — v0.10:**  
+BOOT button on GPIO0 used as reset.  
+Press BOOT → smashCount = 0 → screen redraws.  
+No extra hardware needed — button already on board.  
+
+**PSRAM attempt:**  
+Tried OPI PSRAM to fix crash — error: PSRAM chip not found.  
+Board has 2MB PSRAM but not OPI type.  
+Turned back to Disabled. Not needed — drawNumber() fix worked.  
+
+**Final status — end of 21 May:**  
+Round display showing smash count ✅  
+Smash detection at 10.0g ✅  
+Reset button working ✅  
+Still connected via USB ⚠️  
+Battery connection attempted — session ended before confirming  
+
+**Versions committed:**  
+v0.7 — threshold tuning 10g  
+v0.8 — display first attempt wrong pins  
+v0.9 — display correct pins working  
+v0.10 — display final with reset button  
+
+**What Lishan said:**  
+Went to play cricket between sessions — came back to finish.  
+"I will play a test match and come — not real test match,  
+just a game of 2 innings." 🏏  
+
+**Next session:**  
+Connect battery — cut USB — go wireless.  
+Court test with real racket.  
+Calibrate threshold for real smash force.  
+
+---
+
 ## Entry 017 — 20-21 May 2026
 **Project:** Smash Counter — ESP32 v2  
 **What happened:**  
