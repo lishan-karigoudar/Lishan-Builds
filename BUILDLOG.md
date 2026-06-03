@@ -5,6 +5,70 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 024 — 27 May 2026 (Session 3)
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+BLE blocked by library conflict. Pivoted to WiFi dashboard.
+Phone dashboard working — best result of the project so far.
+
+**BLE library conflict:**  
+Old ESP32_BLE_Arduino 1.0.1 stuck in Arduino web editor.  
+Cannot be removed from UI — server-side cache issue.  
+Multiple attempts — new sketch, library manager, custom libraries.  
+All failed. Same error every time:  
+ringbuf_type_t has not been declared  
+Arduino forum thread found for future reference:  
+https://forum.arduino.cc/t/how-do-i-force-cloud-editor-to-use-the-correct-built-in-esp32-ble-library/1409577  
+
+**Pivot to WiFi hotspot — v0.18:**  
+ESP32 creates WiFi network "LishanTech" password "smash123"  
+Phone connects, opens browser at 192.168.4.1  
+Live dashboard auto-refreshes every second  
+No app needed — works on any phone browser  
+
+**Dashboard shows:**  
+🏸 LishanTech title  
+Live smash count — big cyan number  
+Stats row: per minute, last peak G, best score  
+Intensity badge — colour coded  
+Session timer  
+
+**Why WiFi is better than BLE for demo day:**  
+No app needed — just a browser ✅  
+Anyone can connect — judges, players, parents ✅  
+Full dashboard visible — not just raw data ✅  
+Works on any phone ✅  
+Auto-refreshes every second ✅  
+
+**First test result — 27 May 2026:**  
+Phone connected to LishanTech WiFi.  
+Dashboard loaded at 192.168.4.1.  
+Best score showing 51.  
+Live updates confirmed working.  
+
+**Sketch renamed:**  
+From new_sketch_1779335655264 → Lishan_Wearable_Tech  
+Lishan named it himself.  
+
+**Full feature status — end of 27 May:**  
+✅ Splash screen  
+✅ Smash count on round display  
+✅ Power bar B/G/O/R  
+✅ Persistent best score  
+✅ Reset button  
+✅ Session timer HH:MM:SS  
+✅ Smashes per minute  
+✅ WiFi dashboard on phone — LishanTech  
+⚠️ Battery level indicator — pending battery arrival  
+⚠️ Haptic motor — pending robu.in delivery  
+
+**Next:**  
+Court test with real players.  
+Battery arrives — connect wirelessly.  
+Haptic motor — when robu.in delivers.  
+
+---
+
 ## Entry 023 — 27 May 2026 (Session 2)
 **Project:** Smash Counter — ESP32 v2  
 **What happened:**  
