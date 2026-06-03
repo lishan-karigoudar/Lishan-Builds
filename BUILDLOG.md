@@ -5,6 +5,28 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 011 — 10-11 May 2026
+**Project:** Smash Counter — ESP32 v2 planning  
+**What happened:**  
+Returned from Kerala trip. Started planning Phase 2 hardware seriously.
+
+**Hardware decision — final:**  
+After researching 10+ options over two days, final hardware confirmed:
+
+Waveshare ESP32-S3-Touch-LCD-1.28  
+- 1.28 inch round touch display built in  
+- QMI8658 6-axis IMU built in — no separate MPU-6050 needed  
+- 3.7V LiPo battery header built in  
+- Dual core 240MHz processor  
+- WiFi + BLE 5 built in  
+- Edge Impulse compatible  
+- Price: ₹2,049 from Hubtronics.in — in stock  
+
+Battery: 600mAh LiPo with MX1.25 connector — ₹250  
+Strap: existing 20mm NATO strap from STEM Smart Labs kit ✅  
+
+Total hardware cost: approximately ₹2,30
+
 ## Entry 010 — 10 May 2026
 **Project:** Smash Counter — micro:bit v1  
 **Version:** v0.22 — FINAL micro:bit version  
