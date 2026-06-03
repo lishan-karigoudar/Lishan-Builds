@@ -3,7 +3,65 @@
 Newest entry on top. One entry per build session.
 Every version. Every failure. Every fix.
 
+
 ------
+
+## Entry 012 — 11-13 May 2026
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+Three days of intense preparation before components arrive.
+
+**STL file found — 11 May:**  
+After calling 7+ local 3D printing vendors — all wanted STL file first.  
+Searched Thingiverse and found exact case designed by bonybear:  
+https://www.thingiverse.com/thing:7038776  
+Designed specifically for Waveshare ESP32-S3-Touch-LCD-1.28.  
+Includes battery cavity, USB-C slot, 20mm watch strap lugs.  
+Two files downloaded: prizma_case_bottom.stl, prizma_case_top.stl  
+Full credit to bonybear — this design made the wearable possible.
+
+**Waveshare STEP file — 12 May:**  
+Downloaded official 3D diagram from Waveshare wiki.  
+Sent to 3D printer along with STL files.  
+Printer confirmed — will measure board when hardware arrives,  
+then edit case if needed and print once. No guessing.
+
+**Battery challenge — 11 May:**  
+STL case fits maximum 44×39×4mm battery.  
+4mm thickness extremely hard to find in India with MX1.25 connector.  
+Final resolution: printer will measure actual cavity from STL  
+and confirm exact battery spec before we order.
+
+**Components ordered — 11 May:**  
+- ESP32-S3-Touch-LCD-1.28 — ₹2,049 — Hubtronics.in  
+- LiPo 3.7V 500mAh MX1.25 — ₹250 — robu.in  
+- 2× M2 12mm screws + nuts — ₹20 — local hardware  
+Arriving in 3-4 days.
+
+**Study guide created — 12 May:**  
+Comprehensive 10 chapter document for Lishan.  
+Covers: full journey, all components, how everything works,  
+features roadmap, timeline to demo day, key concepts.  
+Saved in Drive for reference while waiting for hardware.
+
+**3D printer confirmed — 13 May:**  
+Vendor confirmed — once board arrives, he will:  
+Measure board physically with his tools.  
+Verify fit against STL case.  
+Edit if needed. Print in PETG. One go.
+
+**Files uploaded to Drive:**  
+- prizma_case_bottom.stl  
+- prizma_case_top.stl  
+- ESP32-S3-Touch-LCD-1.28.zip (Waveshare official 3D diagram)  
+All in: Drive/wearables/smash-counter-esp32/v1-hardware/
+
+**Next:**  
+Components arrive. Take to printer.  
+Start Arduino IDE setup.  
+Hello world on round display.
+
+---
 
 ## Entry 011 — 10-11 May 2026
 **Project:** Smash Counter — ESP32 v2 planning  
