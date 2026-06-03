@@ -5,6 +5,57 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 023 — 27 May 2026 (Session 2)
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+Smashes per minute and BLE broadcast both added in one session.
+
+**v0.16 — Smashes per minute:**  
+SPM uses rolling window of last 10 smash timestamps.  
+Every second: count how many timestamps within last 60 seconds.  
+That count = current SPM shown on screen in yellow.  
+First attempt had layout issue — SPM stuck in corner.  
+Fixed by adjusting y coordinates — all three lines now visible:  
+HH:MM:SS timer — y=172 cyan  
+SPM: X — y=187 yellow  
+BEST: XX — y=202 red  
+
+**v0.17 — BLE broadcast:**  
+ESP32 advertises as "SmashCounter" — easy to find on phone.  
+nRF Connect app installed on phone for testing.  
+JSON payload sent per smash:  
+session_id, smash_number, peak_g, intensity, spm, best  
+Intensity classification:  
+light = below 5g  
+medium = 5g to 8g  
+hard = 8g to 12g  
+max = above 12g  
+Auto-reconnect: if phone disconnects, ESP32 restarts advertising.  
+Session ID increments on each BOOT button press.  
+Libraries used: BLEDevice, BLEServer, BLEUtils, BLE2902  
+All built into ESP32 Arduino core — no extra install needed.  
+
+**Full feature status — end of 27 May:**  
+✅ Splash screen — by Lishan v1.0 2026  
+✅ Smash count on round display  
+✅ Power bar B/G/O/R  
+✅ Persistent best score  
+✅ Reset button  
+✅ Session timer HH:MM:SS  
+✅ Smashes per minute  
+✅ BLE broadcast as SmashCounter  
+⚠️ Battery level indicator — pending battery arrival  
+⚠️ Haptic motor — pending robu.in delivery  
+⚠️ MIT App Inventor phone app — next  
+
+**Remaining from roadmap:**  
+Battery level indicator — after battery arrives  
+Haptic motor — after robu.in delivery  
+MIT App Inventor phone app  
+Court demo with real players  
+
+---
+
 ## Entry 022 — 27 May 2026
 **Project:** Smash Counter — ESP32 v2  
 **What happened:**  
