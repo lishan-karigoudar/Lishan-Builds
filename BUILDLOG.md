@@ -3,6 +3,46 @@
 Newest entry on top. One entry per build session.
 Every version. Every failure. Every fix.
 
+------
+
+## Entry 007 — 6 May 2026
+**Project:** Smash Counter — micro:bit v1  
+**Platform:** createai.microbit.org — ML gesture detection  
+**What I worked on:**  
+Hit the hardware ceiling on threshold-based detection.
+micro:bit accelerometer maxes out at 8G — hard smash exceeds this.
+Gentle and hard shots both reading above 3000mg — no difference.
+Decision: move to ML-based gesture recognition.
+
+**What is ML gesture detection:**  
+Instead of checking if a number is above a threshold,
+the AI learns the SHAPE of the motion — the pattern of
+x, y, z acceleration over time.
+A smash has a completely different shape to standing still.
+The AI sees this even when the raw numbers look similar.
+
+**What I did:**  
+- Created project "badminton shot detector" on createai.microbit.org
+- Recorded 2 actions: Smash and Still
+- Started with 3 samples each, then increased to 7 samples each
+- Trained the model
+- Tested immediately
+
+**Test results:**  
+Still = 99% accuracy ✅  
+Smash = 100% accuracy ✅  
+
+**Notes:**  
+Same technology used in professional sports sensors costing
+thousands of rupees — built by Lishan at age 9.
+
+**Next ideas from this session:**  
+- Add more shot types: clear shot, drop shot, defence
+- Fix Bluetooth dropping — implement No Pairing Required mode
+
+**Photos:**  
+- ML training screenshots → Drive: v1-photos/ml-training-*-6may2026.png
+
 ---
 
 ## Entry 006 — 2 June 2026
