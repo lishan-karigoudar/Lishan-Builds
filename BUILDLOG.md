@@ -4,6 +4,65 @@ Newest entry on top. One entry per build session.
 Every version. Every failure. Every fix.
 
 ------
+## Entry 026 — 29 May and 2 June 2026
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+Components arrived. Battery connected wirelessly.
+Deep sleep added. Display crash finally fixed.
+
+**29 May — Components arrived:**  
+All 4 robu.in items confirmed received:  
+BC547 NPN transistors × 6 ✅  
+1K ohm resistors × 10 ✅  
+JST 1.25mm 2-pin connectors × 2 ✅  
+Vibration motors 3V 4×8mm × 2 ✅  
+
+**Battery connected — 29 May:**  
+Papa connected battery without soldering.  
+Device now runs wirelessly on battery. ✅  
+USB still works for charging and code upload.  
+Board has built-in charging circuit — ETA6096.  
+USB + battery together = charges while running.  
+
+**2 June — Deep sleep — v0.20:**  
+Short press BOOT = reset counter to 0.  
+Long press BOOT 3 seconds = deep sleep.  
+Screen shows "Sleeping... Press BOOT to wake up".  
+Backlight turns off. Ultra low power state.  
+Press BOOT once to wake — restarts normally.  
+Error found: volatile String not compatible with String operations.  
+Fixed by removing volatile from lastIntensity.  
+
+**2 June — Timer based display fix — v0.21:**  
+Still crashing on hard smash with v0.20.  
+Root cause: drawing display inside smash detection block  
+conflicting with WiFi task even on separate core.  
+Fix: remove all draw calls from smash detection.  
+Display now updates every 500ms on its own timer.  
+Smash detection only updates data variables — no drawing.  
+Result: stable operation during hard smashes. ✅  
+
+**Current feature status — 2 June 2026:**  
+✅ Splash screen — by Lishan v1.0 2026  
+✅ Smash count on round display  
+✅ Power bar B/G/O/R  
+✅ Persistent best score  
+✅ Reset button — short press  
+✅ Deep sleep — long press 3 seconds  
+✅ Session timer HH:MM:SS  
+✅ Smashes per minute  
+✅ WiFi dashboard on phone — LishanTech  
+✅ Dual core — WiFi on Core 0, sensor on Core 1  
+✅ Timer based display — stable during smashes  
+✅ Battery connected wirelessly  
+⚠️ Haptic motor — components arrived, not yet coded  
+⚠️ Court test with real players — pending  
+
+**Next:**  
+Add haptic motor on GPIO15.  
+Court test — calibrate threshold for real smash force.  
+
+---
 
 ## Entry 025 — 27 May 2026 (Session 4)
 **Project:** Smash Counter — ESP32 v2  
