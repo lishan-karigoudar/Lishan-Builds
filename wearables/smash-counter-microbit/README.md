@@ -1,21 +1,26 @@
 # Smash Counter — micro:bit v1
 
-**Status:** Active — court tested with players  
+**Status:** Active — ML gesture detection working  
 **Hardware:** BBC micro:bit V2, CR2025 battery, custom wristband mount  
-**Started:** June 2025
+**Started:** 12 April 2026
 
 ## What it does
-Counts badminton smash shots using acceleration threshold detection on the wrist.
-Displays count on micro:bit LED display.
+Detects badminton smash shots using ML gesture recognition.
+Trained on createai.microbit.org — recognises smash vs still.
+Smash accuracy: 100%. Still accuracy: 99%.
 Button A resets counter. Button B shows current count.
 
 ## The journey
 Started with block coding — 19 attempts to get the logic right.
-Moved to JavaScript when the counting flag logic got too complex for blocks.
-Tested 4 different acceleration thresholds on a real court before finding
-the right value. Every version is saved in the code folder.
+Moved to JavaScript when counting flag logic got too complex for blocks.
+Tested 4 different acceleration thresholds on a real court.
+Hit hardware ceiling — micro:bit accelerometer maxes out at 8G.
+Moved to ML gesture detection — AI learns the shape of the motion.
+First ML model trained 6 May 2026. 100% accuracy first time.
 
 ## Versions
+
+### Threshold based detection — April 2026
 | Version | File | Date | Status | Notes |
 |---------|------|------|--------|-------|
 | v0.1 | v0.1-shake-detection.ts | 12 Apr 2026 | ✅ Done | First attempt — shake gesture, too sensitive |
@@ -30,7 +35,30 @@ the right value. Every version is saved in the code folder.
 | v0.10 | v0.10-shake-gesture-power.ts | 23 Apr 2026 | ✅ Done | Switched to shake gesture |
 | v0.11 | v0.11-peak-detection-loop.ts | 26 Apr 2026 | ✅ Done | Peak detection loop, 10 samples over 500ms |
 | v0.12 | v0.12-peak-detection-final.ts | 26 Apr 2026 | ✅ Done | Peak detection with raw number display |
-| v0.13 | v0.13-continuous-peak-real-data.ts | 27 Apr 20
+| v0.13 | v0.13-continuous-peak-real-data.ts | 27 Apr 2026 | ✅ Done | Forever loop peak, real court data used |
+| v0.14 | v0.14-combined-counter-power.ts | 27 Apr 2026 | ✅ Done | Combined counter + power, overcounting problems |
+| v0.15 | v0.15-counting-flag-fix.ts | 27 Apr 2026 | ✅ Done | Counting flag fix, still undercounting |
+| v0.16 | v0.16-button-based-counting.ts | 27 Apr 2026 | ✅ Done | Button based counting, all showing PWR |
+| v0.17 | v0.17-smart-button-final.ts | 27 Apr 2026 | ✅ Done | Final threshold version, hardware limit found |
+
+### ML gesture detection — May 2026
+| Version | File | Date | Status | Notes |
+|---------|------|------|--------|-------|
+| v0.18 | v0.18-bluetooth-no-pairing-required.ts | 6 May 2026 | ✅ Done | Bluetooth fix — no pairing required mode |
+
+## Real court data
+Collected 26 April 2026:  
+Gentle shot = 1555mg  
+Medium shot = 2896mg  
+Hardest smash = 3533mg  
+
+## ML model
+Platform: createai.microbit.org  
+Project: badminton shot detector  
+Actions trained: Smash, Still  
+Samples per action: 7  
+Smash accuracy: 100%  
+Still accuracy: 99%  
 
 ## Folders
 - `code/` — All versions of the code
