@@ -5,6 +5,25 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 010 — 10 May 2026
+**Project:** Smash Counter — micro:bit v1  
+**Version:** v0.22 — FINAL micro:bit version  
+**What I worked on:**  
+Added session timer to Button B.
+Now shows smash count AND minutes played in one button press.
+Lishan's own idea — not prompted.
+
+**New feature — Session Timer:**  
+Button B shows: smash count → pause → T → minutes played  
+Helps players track smashes per minute, not just total smashes.  
+A player can compare: did I smash more per minute this week?  
+
+**Player feedback continuing:**  
+3rd friend still thinking — hasn't decided yet.  
+Other friends asking: "Is it a watch?", "What program is in it?"  
+Lishan's answer: "It's a micro:bit that helps at badminton.  
+If you want to get better at smash, it counts only s
+
 ## Entry 009 — May 2026
 **Project:** Smash Counter — micro:bit v1  
 **Version:** v0.21  
