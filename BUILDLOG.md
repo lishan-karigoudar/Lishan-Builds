@@ -3,8 +3,73 @@
 Newest entry on top. One entry per build session.
 Every version. Every failure. Every fix.
 
-
 ------
+
+## Entry 019 — 21 May 2026 (Session 2)
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+After display and reset button working — Lishan kept building.
+Four more features added in one afternoon.
+
+**v0.11 — Splash screen + best score:**  
+Splash screen shows "SMASH COUNTER by Lishan v1.0 2026" on startup.  
+Best score tracks highest count in session.  
+Crashed after 14 smashes — watchdog timer error.  
+
+**v0.12 — yield() crash fix:**  
+yield() added inside all drawing functions.  
+Tells ESP32 to reset watchdog timer during long draw operations.  
+No more crashes even after many smashes. ✅  
+
+**v0.13 — Persistent best score — Lishan's idea:**  
+Lishan's exact words:  
+"If you do 38 smashes in 1 match it will show 38 highest score  
+and even if reset your progress wont be lost."  
+Used ESP32 Preferences library — saves to internal flash memory.  
+Best score survives reset, power off, battery removal.  
+This is called non-volatile storage — real products use this.  
+
+**v0.14 — Power bar — Lishan's idea:**  
+Lishan's exact words:  
+"I also thought about keeping smash level on the right side  
+which is vertical — light smash = blue, medium = green,  
+normal = orange, hardest = red."  
+Vertical bar on right side of round screen.  
+Updates continuously — not just on smash detection.  
+Blue ✅ Green ✅ Orange ✅ confirmed in testing.  
+Red needs real court smash — not triggered sitting in chair.  
+
+**Battery discussion:**  
+Lishan raised soldering concern unprompted:  
+"If battery spoils we will never be separated and USB and  
+battery together will make ESP32-S3 heat up blast to ashes."  
+This is correct engineering thinking.  
+Solution confirmed: MX1.25 is plug/unplug — not permanent.  
+Existing 3.7V batteries work — just need MX1.25 connector.  
+Cost: ₹9 per connector — ₹45 for 5 from robu.in.  
+Battery has 3 wires (red/black/white) — only use red and black.  
+
+**End of 21 May status:**  
+✅ Splash screen — by Lishan v1.0 2026  
+✅ Smash counter on round display  
+✅ Power bar — blue green orange red  
+✅ Persistent best score  
+✅ Reset button  
+✅ Threshold 10.0g  
+⚠️ Still on USB — battery connector not yet ordered  
+⚠️ Real court test pending  
+
+**Lishan's ideas vs prompted features:**  
+Persistent best score — Lishan's idea ✅  
+Power bar with colours — Lishan's idea ✅  
+These are the two best features in the product.  
+
+**Next:**  
+Order MX1.25 connectors from robu.in — ₹45 for 5.  
+Papa solders connector to battery wires.  
+Go wireless. Court test. Calibrate threshold.  
+
+---
 
 ## Entry 018 — 21 May 2026
 **Project:** Smash Counter — ESP32 v2  
