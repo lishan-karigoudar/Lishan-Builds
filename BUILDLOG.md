@@ -6,6 +6,71 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 017 — 20-21 May 2026
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+After 7 days of wrong paths — IT WORKS.  
+First working ESP32 smash counter on 21 May 2026.
+
+**20 May — Waveshare demo downloaded:**  
+Official demo ZIP downloaded from Waveshare wiki.  
+Contains: examples, libraries — LVGL, TFT_eSPI, QMI8658.  
+Tried importing QMI8658.h, QMI8658.cpp, DEV_Config.h, DEV_Config.cpp  
+into Arduino web editor one by one.  
+Problem: Waveshare files all connected — LCD, touch, sensor together.  
+Pulling sensor part out caused endless compile errors.  
+DEV_Config.cpp had its own setup() and loop() — conflicting.  
+Multiple file delete and reimport attempts.  
+Hidden files in web editor causing phantom errors.  
+Session ended without working code.  
+
+**21 May — Fresh start, clean code:**  
+Created brand new sketch — zero leftover files.  
+Went back to direct I2C register reads — no library at all.  
+Used math.h for sqrt() — no external dependency.  
+Selected ESP32S3 Dev Module correctly.  
+Wire.begin(6, 7) — SDA GPIO6, SCL GPIO7 confirmed.  
+QMI8658 address 0x6B confirmed.  
+
+**First output — 21 May 2026:**  
+SMASH! Count: 1  
+SMASH! Count: 2  
+SMASH! Count: 3  
+SMASH! Count: 4  
+SMASH! Count: 5  
+SMASH! Count: 6  
+SMASH! Count: 7  
+SMASH! Count: 8  
+
+**What the garbage characters mean:**  
+Boot messages from ESP32 — always appear at startup.  
+Cannot be suppressed on this board. Normal. Ignore them.  
+Everything after them is our code working correctly.  
+
+**What made it finally work:**  
+Fresh sketch — no leftover conflicting files  
+Direct I2C — no library dependency  
+Correct board, correct pins, correct address  
+math.h included explicitly  
+
+**Key learning:**  
+When library imports cause endless errors —  
+go back to basics. Direct I2C register reads.  
+No library = no dependency = no conflict.  
+This is how embedded engineers work at the lowest level.  
+
+**Current status:**  
+Smash detection working at 2.5g threshold.  
+Still connected via USB — not wireless yet.  
+Display not showing count yet — Serial Monitor only.  
+
+**Next steps:**  
+Calibrate threshold on real court.  
+Add display output — show count on round LCD.  
+Add battery — cut USB, go wireless.  
+
+---
+
 ## Entry 016 — 18-20 May 2026
 **Project:** Smash Counter — ESP32 v2  
 **What happened:**  
