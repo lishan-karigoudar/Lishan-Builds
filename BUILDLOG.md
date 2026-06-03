@@ -6,6 +6,44 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 015 — 18 May 2026 (Session 2)
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+Lishan caught the MPU-6050 mistake himself.
+Switched to correct QMI8658 sensor — built into the board.
+
+**The moment:**  
+After ESP32 went blank following upload —  
+Lishan checked previous chat and asked directly:  
+"In previous chat you told MPU-6050 is unnecessary  
+and QMI8658 is better — which one are we ordering?"  
+Answer: order nothing. Sensor already inside the board.  
+
+**Why ESP32 went blank:**  
+MPU-6050 code has while(1) loop —  
+when sensor not found, board freezes completely.  
+Looks dead. Is actually fine.  
+Fixed by uploading new correct code.  
+
+**v0.3 — First correct ESP32 code:**  
+Uses QMI8658 library — Waveshare built-in sensor.  
+Reads AccX, AccY, AccZ from built-in IMU.  
+Prints to Serial Monitor at 115200 baud.  
+No external sensor. No wires. No purchase needed.  
+
+**Key learning:**  
+Always verify which sensor the board has BEFORE writing code.  
+Read the datasheet. Check the wiki. Then code.  
+Never assume — always confirm.  
+
+**Next step:**  
+Upload v0.3 → open Serial Monitor at 115200 baud  
+→ move board → watch AccX AccY AccZ change  
+→ confirm built-in IMU is working  
+→ then build smash detection on top of it.  
+
+---
+
 ## Entry 014 — 14-18 May 2026
 **Project:** Smash Counter — ESP32 v2  
 **What happened:**  
