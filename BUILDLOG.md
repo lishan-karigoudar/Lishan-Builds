@@ -5,6 +5,55 @@ Every version. Every failure. Every fix.
 
 ------
 
+## Entry 025 — 27 May 2026 (Session 4)
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+WiFi dashboard crashed on smash. Fixed with dual core architecture.
+Phone screenshot captured — dashboard working beautifully.
+
+**Problem with v0.18:**  
+Board crashed back to splash screen on every hard smash.  
+Root cause: server.handleClient() and display drawing  
+both on same core — watchdog timer killed the code.  
+
+**Fix — dual core — v0.19:**  
+ESP32-S3 has two cores.  
+WiFi task pinned to Core 0 — runs independently.  
+Sensor + display on Core 1 — main loop.  
+xTaskCreatePinnedToCore() creates the WiFi task.  
+Shared variables marked volatile — no caching between cores.  
+Result: stable operation during hard smashes. ✅  
+
+**Phone dashboard confirmed working:**  
+Screenshot saved: Drive/v1-hardware/wifi-dashboard-phone-27may2026.png  
+Shows: LishanTech title, 0 smashes, 0.0g, best 51, timer 00:00:46  
+Beautiful black dashboard with cyan numbers.  
+
+**Lishan went to play cricket between sessions.**  
+"I will play cricket and come and finish the rest."  
+Came back and continued coding the same day.  
+That's the work ethic.  
+
+**End of 27 May — complete feature set working:**  
+✅ Splash screen — by Lishan v1.0 2026  
+✅ Smash count on round display  
+✅ Power bar B/G/O/R  
+✅ Persistent best score  
+✅ Reset button  
+✅ Session timer HH:MM:SS  
+✅ Smashes per minute  
+✅ WiFi dashboard on phone — LishanTech  
+✅ Dual core — stable during smashes  
+⚠️ Battery — JST connector ordered, not yet arrived  
+⚠️ Haptic motor — robu.in order not yet arrived  
+
+**Next:**  
+Components arrive — battery + haptic motor.  
+Court test with real players.  
+Calibrate threshold for real smash force.  
+
+---
+
 ## Entry 024 — 27 May 2026 (Session 3)
 **Project:** Smash Counter — ESP32 v2  
 **What happened:**  
