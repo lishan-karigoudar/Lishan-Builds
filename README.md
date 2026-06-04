@@ -1,8 +1,7 @@
 # Lishan-Builds
-Engineering projects by Lishan — building wearables, robots, and tools that solve real problems.
-# Lishan Builds
+Engineering projects — building wearables, robots, and tools that solve real problems.
 
-Hi, I'm Lishan. I'm a kid from India.
+# Lishan Builds
 
 I build things that solve real problems — wearables for athletes, 
 robots, and measurement tools. I want to understand how the world 
@@ -43,4 +42,4 @@ The full build log is in [BUILDLOG.md](./BUILDLOG.md) —
 every session, every version, newest entry on top.
 
 ---
-*Started: June 2025 — India*
+*Started: April 2026*
