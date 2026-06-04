@@ -16,9 +16,9 @@ and the lessons from all of them.
 ### 🏸 Wearables
 - [Smash Counter — micro:bit v1](./wearables/smash-counter-microbit/) 
   A wrist-worn badminton smash counter using BBC micro:bit V2 and ML 
-  gesture detection. Currently in testing with real players.
-- [Smash Counter — ESP32 v2](./wearables/smash-counter-esp32/) 
-  *Coming soon*
+  gesture detection. ✅ Complete — 22 versions, 100% ML accuracy, court tested.
+  
+- [Smash Counter — ESP32 v2](https://github.com/lishan-karigoudar/Lishan-Builds/blob/main/wearables/smash-counter-esp32) — v0.21 working wirelessly on battery. WiFi dashboard on phone. 21 versions. Demo Day March 2027.
 
 ### 🤖 Robots
 - [Quadruped Dog](./robots/quadruped-dog/) 
