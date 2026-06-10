@@ -4,6 +4,121 @@ Newest entry on top. One entry per build session.
 Every version. Every failure. Every fix.
 
 ------
+
+## Entry 027 — 4 June 2026
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+Battery indicator added. Showing 0% — calibration needed.
+
+**v0.22 — Battery indicator:**  
+GPIO1 = BAT_ADC confirmed from schematic.  
+Battery icon drawn top right of round display.  
+Green above 50%, orange 20-50%, red below 20%.  
+Battery % also added to WiFi dashboard.  
+Reading shows 0% — wrong multiplier used.  
+Code uses 2.0 multiplier — schematic shows R13=200K R14=100K.  
+Correct multiplier = 3.0 — fix pending calibration.  
+
+**v0.23 — Serial debug for calibration:**  
+getBatteryPct() now prints raw ADC and voltage to Serial Monitor.  
+Tested USB only — reads 0 because no battery voltage on ADC.  
+Needs battery + USB simultaneously for proper calibration.  
+Calibration deferred to next session.  
+
+**Pending:**  
+Battery calibration — connect battery + USB together.  
+Read Serial Monitor to get correct raw values.  
+Update multiplier from 2.0 to correct value.  
+
+---
+
+## Entry 028 — 8-9 June 2026
+**Project:** Smash Counter — ESP32 v2  
+**What happened:**  
+Battery calibration attempted. IP address fixed.
+Touch screen mode selection built and working.
+Haptic motor code added. Freeze crash at session end.
+
+**Battery calibration — 8 June:**  
+Uploaded serial debug version with battery + USB connected.  
+Serial Monitor showed 0 — tape connection not making proper  
+electrical contact on ADC measurement circuit.  
+Battery IS powering board correctly — screen works wirelessly.  
+ADC measurement needs proper soldered JST connection.  
+Calibration deferred until proper soldering done.  
+
+**v0.24 — IP address fix — 9 June:**  
+WiFi text was getting clipped by round screen edge.  
+Tried multiple cursor positions — final working position:  
+LishanTech at cursor (72, 212)  
+192.168.4.1 at cursor (74, 222)  
+Both fully visible — confirmed working.  
+
+**v0.25 — Touch mode selection — 9 June:**  
+MAJOR UPGRADE — version bumped to v2.0.  
+Splash screen now shows "by Lishan v2.0 2026".  
+Touch chip: CST816S on I2C 0x15 — same bus as IMU.  
+Library: CST816S by fbiego — installed via Library Manager.  
+Touch confirmed working — tap was causing restart before coding.  
+
+Mode selection:  
+Swipe right on main screen → opens mode selection screen.  
+Easy = 7 SPM target (green).  
+Medium = 10 SPM target (orange).  
+Hard = 15 SPM target (red).  
+Tap mode → returns to main screen with mode active.  
+Mode saved in Preferences — survives restart and deep sleep.  
+SPM now shows as current/target e.g. "SPM: 8/10".  
+Goal achieved / target pending shown below number.  
+Also shown on WiFi dashboard.  
+Papa's reaction: "it is very nice" ✅  
+
+**v0.26 — Haptic motor — 9 June:**  
+buzz() function added — GPIO15, BC547, 1K resistor circuit.  
+Single buzz on every smash detected.  
+Triple buzz when SPM goal achieved for current mode.  
+goalBuzzed flag prevents repeated triple buzz per session.  
+Motor not yet physically wired — code ready for when connected.  
+
+**v0.27 — Exit button top — 9 June:**  
+Exit button moved from bottom to top left of mode screen.  
+Current mode name shown top right.  
+Easier to exit mid-match without scrolling down.  
+Freeze crash found — device freezes 10 seconds then turns off.  
+Root cause: buzz() uses delay() — blocks Core 1 main loop.  
+Watchdog timer kills process after timeout.  
+Fix: replace delay() in buzz() with non-blocking millis() version.  
+Fix deferred to next weekend session.  
+
+**Full feature status — end of 9 June 2026:**  
+✅ Splash screen — by Lishan v2.0 2026  
+✅ Smash count on round display  
+✅ Power bar B/G/O/R  
+✅ Persistent best score  
+✅ Reset button — short press  
+✅ Deep sleep — long press 3 seconds  
+✅ Session timer HH:MM:SS  
+✅ Smashes per minute with target  
+✅ Goal achieved / target pending  
+✅ Battery indicator icon  
+✅ WiFi dashboard on phone  
+✅ Dual core stable  
+✅ Touch screen mode selection  
+✅ Easy / Medium / Hard modes  
+✅ Mode saved to flash  
+✅ Haptic motor code ready  
+✅ Wireless battery power  
+⚠️ Battery % showing 0 — ADC calibration pending  
+⚠️ Freeze crash — non-blocking buzz fix pending  
+⚠️ Haptic motor not yet physically wired  
+⚠️ Court test with real players — still pending  
+
+**Next weekend:**  
+Fix buzz() crash — non-blocking version.  
+Wire haptic motor to GPIO15.  
+Court test with real players.  
+
+---
 ## Entry 026 — 29 May and 2 June 2026
 **Project:** Smash Counter — ESP32 v2  
 **What happened:**  
