@@ -42,13 +42,12 @@ Wire haptic motor to GPIO15
 Court test with real players
 
 -----------
-
 Entry 030 — 12 June 2026
 Project: Smash Counter — ESP32 v2
 What happened:
 Watchdog timer freeze crash solved. WiFi moved to separate core. Device stable during hard smashes.
 
-v0.29 — Dual-core watchdog fix:
+v0.29 — Dual-core watchdog fix — 12 June:
 WiFi handler task freezing Core 1 sensor loop.
 Solution: xTaskCreatePinnedToCore() — WiFi on Core 0, sensor/display on Core 1.
 No blocking delay() calls in main loop.
@@ -60,7 +59,6 @@ Fix buzz() — replace delay() with non-blocking millis()
 Battery ADC multiplier — verify 3.0 is correct
 Wire haptic motor to GPIO15
 Court test with real players
-
 --------
 
 ## Entry 027 — 4 June 2026
