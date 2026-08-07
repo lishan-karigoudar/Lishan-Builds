@@ -5,6 +5,53 @@ Every version. Every failure. Every fix.
 
 ------
 
+
+Entry 034 — 11 June 2026
+Project: Smash Counter — ESP32 v2
+What happened:
+EXIT button moved to main screen top right. Battery now shows color + percentage. Can exit match anytime without swiping.
+
+v0.29 — EXIT button always-on + battery color coding — 11 June:
+EXIT button moved to top right of main screen — always visible.
+No swipe needed — direct tap to access mode selection.
+Battery display now shows color + percentage:
+Green: 70% or above.
+Orange: 40-70%.
+Red: below 40%.
+Voltage divider fixed: 160K + 82K = 3.0 multiplier.
+10-sample averaging eliminates noise from ADC.
+Serial Monitor debug output shows BAT raw and voltage values.
+
+Feature completeness:
+✅ Splash screen "by Lishan v2.0"
+✅ Smash count on round LCD
+✅ Power bar (B→G→O→R)
+✅ Best score (persistent)
+✅ Session timer (HH:MM:SS)
+✅ Smashes per minute with target
+✅ Goal achieved indicator
+✅ Battery indicator with color + %
+✅ WiFi dashboard on phone
+✅ Touch screen mode selection
+✅ EXIT button (always visible)
+✅ Deep sleep (long press BOOT)
+✅ Reset (short press BOOT)
+✅ Haptic buzz code ready
+✅ Wireless battery power
+
+---------
+
+Testing results:
+Battery color coding works at different percentages ✓
+EXIT button responds immediately on main screen ✓
+Mode selection accessible from EXIT tap ✓
+Serial Monitor shows correct voltage readings ✓
+
+Pending:
+Connect vibration motor when Papa ready
+3D printed case from Papa
+Court demo with real players
+
 Entry 032 — 14 June 2026
 Project: Smash Counter — ESP32 v2
 What happened:
