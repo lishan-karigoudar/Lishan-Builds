@@ -10,7 +10,7 @@ Project: Smash Counter — ESP32 v2
 What happened:
 buzz() function rewritten to non-blocking. Haptic motor timing no longer freezes device.
 
-v0.31 — buzz() millis() refactor:
+v0.31 — buzz() millis() nonblocking — 14 June:
 buzz() replaced delay() with millis() timer.
 Motor pulses: 100ms on, 50ms off (1x buzz), repeated 3x for goal buzz.
 buzzEndTime and buzzCompleted flags prevent overlap.
