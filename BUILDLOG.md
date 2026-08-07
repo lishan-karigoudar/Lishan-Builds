@@ -5,6 +5,25 @@ Every version. Every failure. Every fix.
 
 ------
 
+Entry 032 — 14 June 2026
+Project: Smash Counter — ESP32 v2
+What happened:
+buzz() function rewritten to non-blocking. Haptic motor timing no longer freezes device.
+
+v0.31 — buzz() millis() refactor:
+buzz() replaced delay() with millis() timer.
+Motor pulses: 100ms on, 50ms off (1x buzz), repeated 3x for goal buzz.
+buzzEndTime and buzzCompleted flags prevent overlap.
+No watchdog freeze on motor calls.
+Tested: stable, motor responds correctly.
+
+Pending:
+Battery ADC multiplier — verify 3.0 is correct
+Wire haptic motor to GPIO15
+Court test with real players
+
+---------
+
 Entry 031 — 13 June 2026
 Project: Smash Counter — ESP32 v2
 What happened:
