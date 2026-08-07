@@ -5,6 +5,25 @@ Every version. Every failure. Every fix.
 
 ------
 
+BUILDLOG Entry 036 — 15 June 2026
+Project: Smash Counter — ESP32 v2
+What happened:
+Battery display now shows charging symbol when USB plugged in. Detects charging by reading voltage.
+
+v0.32 — Charging symbol detection — 15 June:
+drawBattery() updated to detect charging state.
+When voltage > 4.15V, displays "z" symbol (charging indicator).
+Battery percentage still shows alongside charging status.
+Color coding maintained: green/orange/red based on percentage.
+Tested: charging detection works, symbol appears immediately.
+
+Pending:
+BLE connectivity for phone app
+Remove WiFi if needed for space
+Court demo with real players
+
+-----------
+
 BUILDLOG Entry 035 — 14 June 2026
 Project: Smash Counter — ESP32 v2
 What happened:
