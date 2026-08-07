@@ -29,7 +29,7 @@ Project: Smash Counter — ESP32 v2
 What happened:
 WiFi IP address now displays correctly on dashboard. Event handler captures connection state.
 
-v0.30 — WiFi IP fix:
+v0.30 — WiFi IP dynamic — 13 June:
 WiFi event listener added — registers on ARDUINO_EVENT_WIFI_STA_GOT_IP.
 IP address stored in volatile String variable.
 WiFi dashboard shows live IP when connected.
